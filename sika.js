@@ -3,7 +3,7 @@ const maksimiPelurit = 10
 const aaniEfektit = {
     up:new Audio('sounds/up.mp3'),
     down:new Audio('sounds/down.mp3'),
-    throwe:new Audio('sounds/throw.mp3'),
+    throwe:new Audio('sounds/Throw.mp3'),
     finaali:[new Audio('sounds/close1.mp3'), new Audio('sounds/close2.mp3')]
 }
 let laskuri = 0
