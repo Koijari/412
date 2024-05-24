@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="pics/tag.ico">
+    <link rel="stylesheet" href="noppa.css">
+    <script src="sika.js"></script>
+    <title>SikaNoppaa!</title>
+</head>
+<body>
+<header id="head1">
+    <img src="pics/oNopat.png" alt="Noppia" width="10%"> <!--img[0]-->
+    
+    <div class="valinnat">
+        <h1>Sika&shy;Noppa</h1>
+        <button id="maara" onclick="noppaMaara()">1 Noppa</button> <!--btn[0]-->
+        <button id="lisaa" onclick="lisaaPelaaja()">Lisää Pelaaja</button> <!--btn[1]-->
+        <!--button>GO!</button-->
+    </div>
+</header>
+<main>    
+    <!--Tulostaulu-->
+    <table id="tulokset">
+        <tr>
+            <th><img src="pics/1dice.png" height="40px" id="headDices"></th> <!--img[1]-->
+            <th>Pelaaja</th>
+            <th>Point&shy;sit</th>
+        </tr> 
+    </table>
+    <!--Heittopöytä-->
+    <section class="poyta" id="poyta1">
+        <div class="nopat">
+            <img id="one" />  <!--img[2]-->
+            <img id="two"/>  <!--img[3]-->
+        </div>
+        <div class="heitot">
+            <button onclick="nopanHeitto()">Heitä</button> <!--btn[2]-->
+            <button onclick="vuoronLopetus()">Lopeta Vuoro</button> <!--btn[3]-->
+            <span id="tulos">0</span>
+            <p id="ohjeet">Voittoon tarvitaan 100 pistettä tai enemmän <br>
+                Heittämällä yhden kärsän heittovuoro vaihtuu <br>
+                Tuplakärsällä saa 25 pistettä <br>
+                Kahdella samalla silmäluvulla tuplapisteet <br>
+                Pelaajanimen hyväksyntä = Enter
+            </p>
+        </div>
+        <h2 id="muikkari"></h2>
+    </section>
+</main>
+<footer>JMK &copy; <br>thanks for the sounds: FesliyanStudios.com</footer>
+</body>
+
+</html>
