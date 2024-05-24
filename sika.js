@@ -164,7 +164,7 @@ function voitto() {
     elementtiHaku('maara').remove()
     //Voittotaulun muotoilut
     aaniEfektit.finaali[sattuma(2)].play()
-    tapahtumaKysely('header')[0].style.height = '200px'
+    tapahtumaKysely('header')[0].style.height = '190px'
     master.style.color = 'gold'
     master.style.fontSize = '3em'
     master.style.textAlign = 'center'
