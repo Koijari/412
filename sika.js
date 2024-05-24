@@ -49,7 +49,9 @@ function lisaaPelaaja() {
             const nimiSyotto = document.createElement('INPUT')
             //Syötön hallinta
             const lisaaNappi = tapahtumaKysely('button')[1]
-            //Taulukon valmistelu
+            const heittoNappi = tapahtumaKysely('button')[2]
+            //Taulukon valmistelu + heittoNappi off
+            heittoNappi.disabled = true
             pelaaja.id = 'pelaaja'+laskuri
             elementtiHaku('pelaaja1').style.backgroundColor = 'pink'
             nroKentta.innerHTML = `${laskuri}.`
@@ -71,8 +73,9 @@ function lisaaPelaaja() {
                     } else {
                         elementtiHaku('nimi'+laskuri).innerHTML = nimi
                 }
-                //lisaaPelaaja-nappi on
+                //lisaaPelaaja-nappi ja heittoNappi on
                 lisaaNappi.disabled = false
+                heittoNappi.disabled = false
             }
         })
             pisteKentta.id = 'pisteet'+laskuri
