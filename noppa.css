@@ -240,6 +240,10 @@ footer {
         height: 210px;
     }
 
+    #ohjeet {
+        font-size: small;
+    }
+
     footer {
         position: relative;
     }
