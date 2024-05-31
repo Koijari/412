@@ -31,14 +31,14 @@ body {
 
 header {
     width: 100%;  
-    font-size: 2.2em;
+    font-size: 2.4em;
     color: rgb(241, 106, 151);
-    padding: 0.1rem 0;
+    padding-bottom: 2px;
 }
 
 main {
     width: 100%;
-    height: 24rem;
+    height: 380px;
 }
 
 .valinnat {
@@ -55,7 +55,7 @@ main {
 
 header img {
     position: absolute;
-    top: 4%;
+    top: 5%;
     left: 10%;
     width: 300px;
 }
@@ -98,9 +98,12 @@ td>input {
 .poyta {
     position: relative;
     width: 55%;
-    height: 23.7rem;
+    height: 24rem;
     background-color: green;
     float: inline-end;
+}
+#vr {
+    color: rgb(228, 131, 147);
 }
 
 #muikkari, #ohjeet {
@@ -237,7 +240,7 @@ footer {
     .poyta {
         position: absolute;
         width: 99%;
-        height: 210px;
+        height: 250px;
     }
 
     #ohjeet {

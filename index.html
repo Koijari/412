@@ -16,6 +16,7 @@
         <h1>Sika&shy;Noppa</h1>
         <button id="maara" onclick="noppaMaara()">1 Noppa</button> <!--btn[0]-->
         <button id="lisaa" onclick="lisaaPelaaja()">Lisää Pelaaja</button> <!--btn[1]-->
+        <button class="voittoraja" onclick="nostaVR()">+50</button> <!--btn[2]-->
         <!--button>GO!</button-->
     </div>
 </header>
@@ -35,10 +36,10 @@
             <img id="two"/>  <!--img[3]-->
         </div>
         <div class="heitot">
-            <button onclick="nopanHeitto()">Heitä</button> <!--btn[2]-->
-            <button onclick="vuoronLopetus()">Lopeta Vuoro</button> <!--btn[3]-->
+            <button onclick="nopanHeitto()">Heitä</button> <!--btn[3]-->
+            <button onclick="vuoronLopetus()">Lopeta Vuoro</button> <!--btn[4]-->
             <span id="tulos">0</span>
-            <p id="ohjeet">Voittoon tarvitaan 100 pistettä tai enemmän <br>
+            <p id="ohjeet">Voittoon tarvitaan <span id="vr">100</span> pistettä tai enemmän <br>
                 Heittämällä yhden kärsän heittovuoro vaihtuu <br>
                 Tuplakärsällä saa 25 pistettä <br>
                 Kahdella samalla silmäluvulla tuplapisteet <br>

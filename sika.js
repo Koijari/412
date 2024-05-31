@@ -3,13 +3,14 @@ const maksimiPelurit = 10
 const aaniEfektit = {
     up:new Audio('sounds/up.mp3'),
     down:new Audio('sounds/down.mp3'),
-    throwe:new Audio('sounds/Throw.mp3'),
+    throwe:new Audio('sounds/throw.mp3'),
     finaali:[new Audio('sounds/close1.mp3'), new Audio('sounds/close2.mp3')]
 }
 let laskuri = 0
 let heitto = 0
 let tulos = 0
 let vuoroNro = 1
+let voittoraja = 100
 
 //Apufunktiot
 const sattuma = (syote) => Math.floor(Math.random()*syote)
@@ -31,6 +32,19 @@ function noppaMaara() {
     }
 }
 
+function nostaVR() {
+    if (heitto == 0) {
+        if (voittoraja < 300) {
+            voittoraja += 50        
+        } else {
+            voittoraja = 100
+        }
+        elementtiHaku('vr').innerHTML = voittoraja
+    } else {
+        elementtiHaku('muikkari').innerHTML = 'Eikös se tää sovittu jo pelin alussa'
+    }
+}
+
 function lisaaPelaaja() {    
     if (heitto === 0) {
         if (laskuri >= maksimiPelurit) {
@@ -49,9 +63,7 @@ function lisaaPelaaja() {
             const nimiSyotto = document.createElement('INPUT')
             //Syötön hallinta
             const lisaaNappi = tapahtumaKysely('button')[1]
-            const heittoNappi = tapahtumaKysely('button')[2]
-            //Taulukon valmistelu + heittoNappi off
-            heittoNappi.disabled = true
+            //Taulukon valmistelu
             pelaaja.id = 'pelaaja'+laskuri
             elementtiHaku('pelaaja1').style.backgroundColor = 'pink'
             nroKentta.innerHTML = `${laskuri}.`
@@ -73,16 +85,15 @@ function lisaaPelaaja() {
                     } else {
                         elementtiHaku('nimi'+laskuri).innerHTML = nimi
                 }
-                //lisaaPelaaja-nappi ja heittoNappi on
+                //lisaaPelaaja-nappi on
                 lisaaNappi.disabled = false
-                heittoNappi.disabled = false
             }
         })
             pisteKentta.id = 'pisteet'+laskuri
             pisteKentta.innerHTML = 0
         }
     } else {
-        elementtiHaku('muikkari').innerHTML = 'Eipä lissäillä kesken pelin'
+        elementtiHaku('muikkari').innerHTML = 'Vuan jos seuraavalle pelille tuut'
     }
 }
 
@@ -147,7 +158,7 @@ function ykkosLopetus() {
 }
 
 function vuoronVaihto() {
-    if (Number(elementtiHaku('pisteet'+vuoroNro).innerHTML) >= 100) {
+    if (Number(elementtiHaku('pisteet'+vuoroNro).innerHTML) >= voittoraja) {
         voitto()
     } else {
         elementtiHaku('pelaaja'+vuoroNro).style.backgroundColor = 'aqua'
@@ -167,7 +178,8 @@ function voitto() {
     elementtiHaku('maara').remove()
     //Voittotaulun muotoilut
     aaniEfektit.finaali[sattuma(2)].play()
-    tapahtumaKysely('header')[0].style.height = '190px'
+    tapahtumaKysely('header')[0].style.height = '210px'
+    tapahtumaKysely('header')[0].style.fontSize = '2.9em'
     master.style.color = 'gold'
     master.style.fontSize = '3em'
     master.style.textAlign = 'center'
