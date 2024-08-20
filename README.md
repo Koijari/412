@@ -1,5 +1,5 @@
 # 412
-Pig, Dice rolling game (finnish)
+Pig, Dice rolling game (finnish)/n
 Beta-testers found few issues:
 -when adding second competitor, heitä-button was functional before pressing Enter (fixed)
 -Some responsive design issues (fixed)
